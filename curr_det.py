@@ -1,12 +1,12 @@
 from utils import *
 
-def currency_det(imgpath):
+def currency_det(image):
 	max_val = 8
 	max_pt = -1
 	max_kp = 0
 
 	orb = cv2.ORB_create()
-	test_img = read_img(imgpath)
+	test_img = image
 
 	# resizing must be dynamic
 	original = resize_img(test_img, 0.4)
@@ -42,7 +42,7 @@ def currency_det(imgpath):
 		img3 = cv2.drawMatchesKnn(test_img, kp1, train_img, max_kp, good, 4)
 		
 		note = str(training_set[max_pt])[6:-4]
-		res = 'Detected denomination: Rs. ' + str(note)
+		res = 'Detected denomination: Rs. ' + str(note.split('/')[-1])
 	else:
 		res = 'Fake currency'
 	return res

@@ -9,6 +9,9 @@ from twilio.rest import Client
 from utils import *
 import json
 from curr_det import *
+from PIL import Image
+from io import BytesIO
+import io
 
 # =========== SOS config ==========
 AccountSID = "ACab7d918a4faa83654783af6e14278e9c"
@@ -67,7 +70,7 @@ def get_prediction(image, net, LABELS, COLORS):
 
     # determine only the *output* layer names that we need from YOLO
     ln = net.getLayerNames()
-    ln = [ln[i[0] - 1] for i in net.getUnconnectedOutLayers()]
+    ln = [ln[i - 1] for i in net.getUnconnectedOutLayers()]
 
     # construct a blob from the input image and then perform a forward
     # pass of the YOLO object detector, giving us our bounding boxes and
@@ -146,10 +149,11 @@ def hello():
 
 @app.route("/detected_obj", methods=["POST"])
 def obj_det():
-    file = request.files['file']
-    if file and allowed_file(file.filename):
-        file.save("img.jpg")
-    image = cv2.imread("img.jpg")
+    image = request.files["file"].read()
+    image = Image.open(io.BytesIO(image))
+    npimg = np.array(image)
+    image = npimg.copy()
+    image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
     labelsPath = "yolo_v3/coco.names"
     cfgpath = "yolo_v3/yolov3-tiny.cfg"
     wpath = "yolo_v3/yolov3-tiny.weights"
@@ -158,7 +162,7 @@ def obj_det():
     Weights = get_weights(wpath)
     nets = load_model(CFG,Weights)
     Colors = get_colors(Lables)
-    res = get_prediction(image,nets,Lables,Colors)
+    res = get_prediction(image, nets, Lables, Colors)
 
     return res
 
@@ -168,10 +172,12 @@ def obj_det():
 
 @app.route("/currency", methods=["POST"])
 def currency():
-    file = request.files['file']
-    if file and allowed_file(file.filename):
-        file.save("img.jpg")
-    res = currency_det("img.jpg")
+    image = request.files["file"].read()
+    image = Image.open(io.BytesIO(image))
+    npimg = np.array(image)
+    image = npimg.copy()
+    image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+    res = currency_det(image)
     return res
 
 @app.route("/sos", methods=["POST"])
