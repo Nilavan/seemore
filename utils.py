@@ -1,4 +1,3 @@
-# UE14CS348 Digital Image Processing Mini Project
 # Indian paper currency detection
 
 import cv2
