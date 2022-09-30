@@ -1,4 +1,7 @@
 from utils import *
+import os 
+dir_path = os.path.dirname(os.path.realpath('currency-detection/currencies/20.jpg'))
+
 
 def currency_det(image):
 	max_val = 8
@@ -13,7 +16,7 @@ def currency_det(image):
 
 	# keypoints and descriptors
 	(kp1, des1) = orb.detectAndCompute(test_img, None)
-	training_set = ['currency-detection/currencies/20.jpg', 'currency-detection/currencies/50.jpg', 'currency-detection/currencies/100.jpg', 'currency-detection/currencies/500.jpg']
+	training_set = [dir_path+'/20.jpg', dir_path+'/50.jpg', dir_path+'/100.jpg', dir_path+'/500.jpg']
 
 	for i in range(0, len(training_set)):
 		# train image
