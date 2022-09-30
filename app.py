@@ -1,8 +1,6 @@
 from flask import Flask, request
 import os
-import urllib.request
 import numpy as np
-import argparse
 import time
 import cv2
 from twilio.rest import Client
@@ -80,7 +78,7 @@ def get_prediction(image, net, LABELS, COLORS):
     net.setInput(blob)
     start = time.time()
     layerOutputs = net.forward(ln)
-    print(layerOutputs)
+
     end = time.time()
 
     # show timing information on YOLO

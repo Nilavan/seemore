@@ -4,7 +4,6 @@ import cv2
 import math
 import numpy as np
 import matplotlib.pyplot as plt
-from pprint import pprint
 
 
 # read image as is
