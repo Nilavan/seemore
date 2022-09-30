@@ -141,9 +141,9 @@ def sendMessage(client_num, message):
 
 app = Flask(__name__)
 
-# @app.route("/")
-# def hello():
-#     return "Hello World!"
+@app.route("/")
+def hello():
+    return "Hello World!"
 
 # @app.route("/detected_obj", methods=["POST"])
 # def obj_det():
