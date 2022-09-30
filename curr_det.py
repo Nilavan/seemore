@@ -1,14 +1,14 @@
 from utils import *
-import os 
-dir_path = os.path.dirname(os.path.realpath('currency-detection/currencies/20.jpg'))
+import os
 
+path="/home/stripan/Blind-AI-Backend/"
 
 def currency_det(image):
 	max_val = 8
 	max_pt = -1
 	max_kp = 0
 	res = ''
-	
+
 	orb = cv2.ORB_create()
 	test_img = image
 
@@ -17,7 +17,9 @@ def currency_det(image):
 
 	# keypoints and descriptors
 	(kp1, des1) = orb.detectAndCompute(test_img, None)
-	training_set = [dir_path+'/20.jpg', dir_path+'/50.jpg', dir_path+'/100.jpg', dir_path+'/500.jpg']
+	training_set = [os.path.join(path,"currency-detection","currencies",'20.jpg'), os.path.join(path,"currency-detection","currencies",'50.jpg'), os.path.join(path,"currency-detection","currencies",'100.jpg'), os.path.join(path,"currency-detection","currencies",'500.jpg')]
+
+
 
 	for i in range(0, len(training_set)):
 		# train image
@@ -44,7 +46,7 @@ def currency_det(image):
 	if max_val != 8:
 		train_img = cv2.imread(training_set[max_pt])
 		img3 = cv2.drawMatchesKnn(test_img, kp1, train_img, max_kp, good, 4)
-		
+
 		note = str(training_set[max_pt])[6:-4]
 		res = 'Detected note of rupees ' + str(note.split('/')[-1])
 	else:

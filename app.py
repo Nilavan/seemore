@@ -184,6 +184,6 @@ def sos():
     for num in numbers:
         sendMessage(num, "SOS EMERGENCY FROM BLIND PERSON")
     return "Success"
-    
+
 if __name__ == "__main__":
     app.run()
