@@ -254,7 +254,7 @@ cython_debug/
 objcap.py
 objdetect.py
 sos.py
-*jpeg
+test*jpeg
 ocr.py
 calibration
 distance.py
