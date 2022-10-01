@@ -1,7 +1,8 @@
 from utils import *
 import os
 
-path="/home/stripan/Blind-AI-Backend/"
+# path="/home/stripan/Blind-AI-Backend/"
+path="/Users/lirajkhanna/Desktop/hackathon/Blind-AI-Backend/"
 
 def configure_path(file):
 	return os.path.join(path,"currency-detection","currencies", file)
@@ -20,14 +21,38 @@ def currency_det(image):
 
 	# keypoints and descriptors
 	(kp1, des1) = orb.detectAndCompute(test_img, None)
-	training_set = [configure_path("20.jpg"), configure_path("50.jpg"), configure_path("100.jpg"), configure_path("500.jpg")]
-
-
+	training_set = [
+		configure_path("10_1.jpeg"),
+		configure_path("10_2.jpg"),
+		configure_path("10_3.jpeg"),
+		configure_path("10_4.jpeg"),
+		configure_path("10_5.jpg"),
+		configure_path("20_1.jpeg"),
+		configure_path("20_2.jpg"),
+		configure_path("20_3.jpeg"),
+		configure_path("20_4.jpeg"),
+		configure_path("20_5.jpg"),
+		configure_path("50_1.jpeg"),
+		configure_path("50_2.jpeg"),
+		configure_path("50_3.jpg"),
+		configure_path("50_4.jpeg"),
+		configure_path("50_5.jpg"),
+		configure_path("100_1.jpg"), 
+		configure_path("200_1.jpeg"),
+		configure_path("200_2.jpg"),
+		configure_path("200_3.jpeg"),
+		configure_path("200_4.jpeg"),
+		configure_path("200_5.jpeg"),
+		configure_path("500_1.jpeg"),
+		configure_path("500_2.jpeg"),
+		configure_path("500_3.jpeg"),
+		configure_path("500_4.jpeg"),
+		configure_path("500_5.jpg")
+	]
 
 	for i in range(0, len(training_set)):
 		# train image
 		train_img = cv2.imread(training_set[i])
-
 		(kp2, des2) = orb.detectAndCompute(train_img, None)
 
 		# brute force matcher
@@ -51,7 +76,7 @@ def currency_det(image):
 		img3 = cv2.drawMatchesKnn(test_img, kp1, train_img, max_kp, good, 4)
 
 		note = str(training_set[max_pt])[6:-4]
-		res = 'Detected note of rupees ' + str(note.split('/')[-1])
+		res = 'Detected note of rupees ' + str(note.split('/')[-1].split("_")[0])
 	else:
 		res = 'Fake currency'
 	return res
