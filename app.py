@@ -18,9 +18,9 @@ AuthToken = "5d7d4cbfb1929162f5e4d896bddd4257"
 # =========== Yolo config ==========
 confthres = 0.5
 nmsthres = 0.1
-yolo_path = "/home/stripan/Blind-AI-Backend/yolo_v3"
+yolo_path = "/home/liraj/Blind-AI-Backend/yolo_v3"
 # yolo_path = "./yolo_v3" # use for localhost
-path = "/home/stripan/Blind-AI-Backend/"
+path = "/home/liraj/Blind-AI-Backend/"
 # path = "./" # use for localhost
 # =========== Currency config ==========
 max_val = 8
