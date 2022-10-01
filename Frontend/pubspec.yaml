@@ -1,0 +1,59 @@
+name: blind_ai
+description: A new Flutter project.
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.16.2 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.2
+
+  # For Stacked Architecture
+  stacked:
+
+  # For Text to Speech
+  text_to_speech: ^0.2.3
+
+  # For Speech to Text
+  speech_to_text: 5.6.1
+
+  # For the Image
+  image_picker: ^0.8.5+3
+  camera: ^0.10.0+3
+
+  # For API
+  dio: ^4.0.0
+  http: ^0.13.5
+
+
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^1.0.0
+
+  # For Logo
+  flutter_launcher_icons: ^0.10.0
+
+flutter_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/icons/logo_app.png"
+
+
+flutter:
+
+  uses-material-design: true
+
+  assets:
+     - assets/icons/logo_pic.png
+
+
