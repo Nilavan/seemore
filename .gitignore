@@ -255,6 +255,9 @@ objcap.py
 objdetect.py
 sos.py
 test*jpeg
+book.jpeg
+harry.jpeg
+laptop*.jpeg
+ppl.jpeg
 ocr.py
-calibration
 distance.py

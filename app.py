@@ -19,13 +19,26 @@ AuthToken = "284e0c2e3c8c716a94534e3be95b8f5b"
 confthres = 0.5
 nmsthres = 0.1
 yolo_path = "/home/stripan/Blind-AI-Backend/yolo_v3"
-# yolo_path = "./yolo_v3"
+# yolo_path = "./yolo_v3" # use for localhost
 # =========== Currency config ==========
 max_val = 8
 max_pt = -1
 max_kp = 0
 # =========== Currency config ==========
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg'])
+# =========== Distance config ==========
+Known_distance = 44
+Known_width = 33.782
+
+def focal_length_finder(measured_distance, real_width, width_in_rf_image):
+	# finding the focal length
+	focal_length = (width_in_rf_image * measured_distance) / real_width
+	return focal_length
+
+def distance_finder(Focal_Length, real_face_width, face_width_in_frame):
+    # distance estimation function
+	distance = (real_face_width * Focal_Length)/face_width_in_frame
+	return distance
 
 client = Client(AccountSID, AuthToken)
 
@@ -67,6 +80,7 @@ def load_model(configpath, weightspath):
 def get_prediction(image, net, LABELS, COLORS):
     (H, W) = image.shape[:2]
     res = ''
+    laptop_widths = []
 
     # determine only the *output* layer names that we need from YOLO
     ln = net.getLayerNames()
@@ -134,9 +148,17 @@ def get_prediction(image, net, LABELS, COLORS):
     if len(idxs) > 0:
         # loop over the indexes we are keeping
         for i in idxs.flatten():
+            # extract the bounding box coordinates
+            (x, y) = (boxes[i][0], boxes[i][1])
+            (w, h) = (boxes[i][2], boxes[i][3])
+
             text = "{}: {:.4f}".format(LABELS[classIDs[i]], confidences[i])
             res = res + LABELS[classIDs[i]]+', '
-    return res + 'found'
+            if LABELS[classIDs[i]] == 'laptop':
+                laptop_widths += [w]
+    if res == '':
+        res = 'Try again, nothing '
+    return res + 'found', laptop_widths
 
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
@@ -162,8 +184,15 @@ def obj_det():
     Weights = get_weights(wpath)
     nets = load_model(CFG,Weights)
     Colors = get_colors(Lables)
-    res = get_prediction(image, nets, Lables, Colors)
-
+    res, laptop_widths = get_prediction(image, nets, Lables, Colors)
+    if laptop_widths:
+        res += ' at distance '
+        ref_image = cv2.imread("calibration/Ref_image.png")
+        _, ref_image_laptop_width = get_prediction(ref_image, nets, Lables, Colors)
+        focal_length_found = focal_length_finder(Known_distance, Known_width, ref_image_laptop_width[0])
+        for laptop_width in laptop_widths:
+            distance = distance_finder(focal_length_found, Known_width, laptop_width)
+        res = res + '{:.2f} centimeters'.format(distance)
     return res
 
 @app.route("/detected_txt", methods=["POST"])
@@ -174,6 +203,8 @@ def txt_det():
     image = npimg.copy()
     image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
     res = pytesseract.image_to_string(image, lang='eng')
+    if not res.strip():
+        res = 'No text found, try again'
     return res
 
 @app.route("/currency", methods=["POST"])

@@ -1,7 +1,8 @@
 from utils import *
 import os
 
-path="/home/stripan/Blind-AI-Backend/"
+path = "/home/stripan/Blind-AI-Backend/"
+# path = '/Users/nilavanakilan/Desktop/Projects/blind_ai' # use for localhost
 
 def configure_path(file):
 	return os.path.join(path,"currency-detection","currencies", file)
@@ -77,5 +78,5 @@ def currency_det(image):
 		note = str(training_set[max_pt])[6:-4]
 		res = 'Detected note of rupees ' + str(note.split('/')[-1].split("_")[0])
 	else:
-		res = 'Fake currency'
+		res = 'No currency detected, try again'
 	return res
