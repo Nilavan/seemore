@@ -6,7 +6,7 @@
   <br>
 </h1>
 
-<h4 align="center">An application to make the lives of visually impaired people a little more ordinary.</h4>
+<h4 align="center">An app to make the lives of visually impaired people a little more ordinary.</h4>
 
 <!--<p align="center">
   <a href="https://badge.fury.io/js/electron-markdownify">
@@ -32,6 +32,10 @@
   <a href="#support">Support</a> •
   <a href="#contributors">Contributors</a> •
   <a href="#license">License</a>
+</p>
+
+<p align="center">
+<img width = 30% src="https://user-images.githubusercontent.com/73516876/193432075-1e0bcc3c-0681-441d-bab5-4d185f25c974.jpeg" alt="App">
 </p>
 
 ## Introduction
