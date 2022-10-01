@@ -255,3 +255,6 @@ objcap.py
 objdetect.py
 sos.py
 *jpeg
+ocr.py
+calibration
+distance.py
