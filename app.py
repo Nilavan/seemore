@@ -20,6 +20,8 @@ confthres = 0.5
 nmsthres = 0.1
 yolo_path = "/home/stripan/Blind-AI-Backend/yolo_v3"
 # yolo_path = "./yolo_v3" # use for localhost
+path = "/home/stripan/Blind-AI-Backend/"
+# path = "./" # use for localhost
 # =========== Currency config ==========
 max_val = 8
 max_pt = -1
@@ -187,7 +189,7 @@ def obj_det():
     res, laptop_widths = get_prediction(image, nets, Lables, Colors)
     if laptop_widths:
         res += ' at distance '
-        ref_image = cv2.imread("calibration/Ref_image.png")
+        ref_image = cv2.imread(os.path.join(path,"calibration", "Ref_image.png"))
         _, ref_image_laptop_width = get_prediction(ref_image, nets, Lables, Colors)
         focal_length_found = focal_length_finder(Known_distance, Known_width, ref_image_laptop_width[0])
         for laptop_width in laptop_widths:
