@@ -1,7 +1,7 @@
 from utils import *
 import os
 
-path = "/home/stripan/Blind-AI-Backend/"
+path = "/home/liraj/Blind-AI-Backend/"
 # path = '/Users/nilavanakilan/Desktop/Projects/blind_ai' # use for localhost
 
 def configure_path(file):
