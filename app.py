@@ -17,7 +17,7 @@ AuthToken = "284e0c2e3c8c716a94534e3be95b8f5b"
 # =========== Yolo config ==========
 confthres = 0.5
 nmsthres = 0.1
-yolo_path = './'
+yolo_path = "/home/stripan/Blind-AI-Backend/yolo_v3"
 # =========== Currency config ==========
 max_val = 8
 max_pt = -1
@@ -145,6 +145,11 @@ app = Flask(__name__)
 def hello():
     return "Hello World!"
 
+path="/home/stripan/Blind-AI-Backend/"
+
+# def configure_path(file):
+# 	return os.path.join(path,"yolo_v3", file)
+
 @app.route("/detected_obj", methods=["POST"])
 def obj_det():
     image = request.files["file"].read()
@@ -152,9 +157,9 @@ def obj_det():
     npimg = np.array(image)
     image = npimg.copy()
     image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
-    labelsPath = "yolo_v3/coco.names"
-    cfgpath = "yolo_v3/yolov3-tiny.cfg"
-    wpath = "yolo_v3/yolov3-tiny.weights"
+    labelsPath = "coco.names"
+    cfgpath = "yolov3-tiny.cfg"
+    wpath = "yolov3-tiny.weights"
     Lables = get_labels(labelsPath)
     CFG = get_config(cfgpath)
     Weights = get_weights(wpath)

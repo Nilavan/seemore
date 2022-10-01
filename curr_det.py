@@ -3,6 +3,9 @@ import os
 
 path="/home/stripan/Blind-AI-Backend/"
 
+def configure_path(file):
+	return os.path.join(path,"currency-detection","currencies", file)
+
 def currency_det(image):
 	max_val = 8
 	max_pt = -1
@@ -17,7 +20,7 @@ def currency_det(image):
 
 	# keypoints and descriptors
 	(kp1, des1) = orb.detectAndCompute(test_img, None)
-	training_set = [os.path.join(path,"currency-detection","currencies",'20.jpg'), os.path.join(path,"currency-detection","currencies",'50.jpg'), os.path.join(path,"currency-detection","currencies",'100.jpg'), os.path.join(path,"currency-detection","currencies",'500.jpg')]
+	training_set = [configure_path("20.jpg"), configure_path("50.jpg"), configure_path("100.jpg"), configure_path("500.jpg")]
 
 
 
