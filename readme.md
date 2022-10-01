@@ -27,8 +27,7 @@
   <a href="#installation">Installation</a> •
   <a href="#application-structure">Application Structure</a> •
   <a href="#key-features">Key Features</a> •
-  <a href="#how-to-use">How To U`se</a> •
-  <a href="#download">Download</a> •
+  <a href="#how-to-use">How To Use</a> •
   <a href="#credits">Credits</a> •
   <a href="#support">Support</a> •
   <a href="#contributors">Contributors</a> •
