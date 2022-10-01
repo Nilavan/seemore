@@ -13,8 +13,8 @@ import io
 import pytesseract
 
 # =========== SOS config ==========
-AccountSID = "ACab7d918a4faa83654783af6e14278e9c"
-AuthToken = "284e0c2e3c8c716a94534e3be95b8f5b"
+AccountSID = "AC0057f356be2ea11e2884e81eb6aa78fd"
+AuthToken = "5d7d4cbfb1929162f5e4d896bddd4257"
 # =========== Yolo config ==========
 confthres = 0.5
 nmsthres = 0.1
@@ -47,7 +47,7 @@ client = Client(AccountSID, AuthToken)
 def sendMessage(client_num, message):
     client.messages.create(
         body=message,
-        from_=+13023432161,
+        from_=+15405924762,
         to='+91'+client_num
     )
 
