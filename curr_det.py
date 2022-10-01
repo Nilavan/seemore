@@ -2,6 +2,7 @@ from utils import *
 import os
 
 path="/home/stripan/Blind-AI-Backend/"
+# path = './'
 
 def configure_path(file):
 	return os.path.join(path,"currency-detection","currencies", file)

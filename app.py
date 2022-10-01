@@ -10,6 +10,7 @@ from curr_det import *
 from PIL import Image
 from io import BytesIO
 import io
+import pytesseract
 
 # =========== SOS config ==========
 AccountSID = "ACab7d918a4faa83654783af6e14278e9c"
@@ -18,6 +19,7 @@ AuthToken = "284e0c2e3c8c716a94534e3be95b8f5b"
 confthres = 0.5
 nmsthres = 0.1
 yolo_path = "/home/stripan/Blind-AI-Backend/yolo_v3"
+# yolo_path = "./yolo_v3"
 # =========== Currency config ==========
 max_val = 8
 max_pt = -1
@@ -145,11 +147,6 @@ app = Flask(__name__)
 def hello():
     return "Hello World!"
 
-path="/home/stripan/Blind-AI-Backend/"
-
-# def configure_path(file):
-# 	return os.path.join(path,"yolo_v3", file)
-
 @app.route("/detected_obj", methods=["POST"])
 def obj_det():
     image = request.files["file"].read()
@@ -169,9 +166,15 @@ def obj_det():
 
     return res
 
-# @app.route("/detected_txt", methods=["POST"])
-# def txt_det():
-#     return "Text"
+@app.route("/detected_txt", methods=["POST"])
+def txt_det():
+    image = request.files["file"].read()
+    image = Image.open(io.BytesIO(image))
+    npimg = np.array(image)
+    image = npimg.copy()
+    image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+    res = pytesseract.image_to_string(image, lang='eng')
+    return res
 
 @app.route("/currency", methods=["POST"])
 def currency():
