@@ -1,8 +1,8 @@
 from utils import *
 import os
 
-path = "/home/liraj/Blind-AI-Backend/"
-# path = '/Users/nilavanakilan/Desktop/Projects/blind_ai' # use for localhost
+# path = "/home/liraj/Blind-AI-Backend/"
+path = './' # use for localhost
 
 def configure_path(file):
 	return os.path.join(path,"currency-detection","currencies", file)
