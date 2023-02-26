@@ -251,13 +251,8 @@ cython_debug/
 
 # End of https://www.toptal.com/developers/gitignore/api/flask,python
 
-objcap.py
-objdetect.py
 sos.py
-test*jpeg
-book.jpeg
-harry.jpeg
-laptop*.jpeg
-ppl.jpeg
-ocr.py
 distance.py
+test_images
+blind_ai
+Outdated

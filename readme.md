@@ -1,26 +1,12 @@
 <h1 align="center">
   <br>
-  <img src="/Frontend/assets/icons/logo_app.png" alt="Blind-ai" width="200">
+  <img src="./Frontend/assets/icons/logo_app.png" alt="Blind-ai" width="200">
   <br>
   blind.ai
   <br>
 </h1>
 
 <h4 align="center">An app to make the lives of visually impaired people a little more ordinary.</h4>
-
-<!--<p align="center">
-  <a href="https://badge.fury.io/js/electron-markdownify">
-    <img src="https://badge.fury.io/js/electron-markdownify.svg"
-         alt="Gitter">
-  </a>
-  <a href="https://gitter.im/amitmerchant1990/electron-markdownify"><img src="https://badges.gitter.im/amitmerchant1990/electron-markdownify.svg"></a>
-  <a href="https://saythanks.io/to/bullredeyes@gmail.com">
-      <img src="https://img.shields.io/badge/SayThanks.io-%E2%98%BC-1EAEDB.svg">
-  </a>
-  <a href="https://www.paypal.me/AmitMerchant">
-    <img src="https://img.shields.io/badge/$-donate-ff69b4.svg?maxAge=2592000&amp;style=flat">
-  </a>
-</p>-->
 
 <p align="center">
   <a href="#introduction">Introduction</a> •
@@ -114,16 +100,6 @@ This software uses the following open source packages:
 - [Twilio](https://www.twilio.com/)
 - [Flask](https://flask.palletsprojects.com/en/2.2.x/)
 
-## Support
-
-<a href="" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/purple_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
-
-<p>Or</p>
-
-<a href="">
-	<img src="https://c5.patreon.com/external/logo/become_a_patron_button@2x.png" width="160">
-</a>
-
 ## Contributors
 
 [@N-liraj-khanna](https://github.com/N-liraj-khanna) &nbsp;&middot;&nbsp;
@@ -133,9 +109,7 @@ This software uses the following open source packages:
 
 ## License
 
-MIT
-
----
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE) file for details
 
 > [nilavan.github.io](https://www.nilavan.github.io) &nbsp;&middot;&nbsp;
 > GitHub [@Nilavan](https://github.com/Nilavan) &nbsp;&middot;&nbsp;
