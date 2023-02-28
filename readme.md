@@ -15,13 +15,12 @@
   <a href="#key-features">Key Features</a> •
   <a href="#how-to-use">How To Use</a> •
   <a href="#credits">Credits</a> •
-  <a href="#support">Support</a> •
   <a href="#contributors">Contributors</a> •
   <a href="#license">License</a>
 </p>
 
 <p align="center">
-<img width = 30% src="https://user-images.githubusercontent.com/73516876/193432075-1e0bcc3c-0681-441d-bab5-4d185f25c974.jpeg" alt="App">
+<img width = 100% src="https://user-images.githubusercontent.com/73516876/221947341-e983ae43-0d68-4054-a818-91c483fd2173.png" alt="App">
 </p>
 
 ## Introduction
@@ -42,22 +41,23 @@ $ pip install -r requirements.txt
 
 ```
 .
-blind_ai/
+seemore/
 ├─ Frontend/
 ├─ calibration/
 │  ├─ Ref_image.png
-├─ currency-detection/
-│  ├─ currencies/
-├─ yolo_v3/
-│  ├─ coco.names
-│  ├─ yolov3-tiny.cfg
-│  ├─ yolov3-tiny.weights
+├─ currency_model/
+│  ├─ bovw_codebook_600.pickle
+│  ├─ rfclassifier_600.sav
+├─ yolo_v5/
+│  ├─ yolov5s.onnx
+│  ├─ classes.txt
 ├─ app.py
-├─ curr_det.py
+├─ currencydet.py
+├─ objdet.py
 ├─ requirements.txt
-├─ utils.py
 ├─ .gitignore
 ├─ Procfile
+├─ LICENSE
 ```
 
 ## Key Features
@@ -102,10 +102,10 @@ This software uses the following open source packages:
 
 ## Contributors
 
-[@N-liraj-khanna](https://github.com/N-liraj-khanna) &nbsp;&middot;&nbsp;
-[@ajith-m-doodlebug](https://github.com/ajith-m-doodlebug) &nbsp;&middot;&nbsp;
-[@calicartels](https://github.com/calicartels/) &nbsp;&middot;&nbsp;
 [@Nilavan](https://github.com/Nilavan) &nbsp;&middot;&nbsp;
+[@ajith-m-doodlebug](https://github.com/ajith-m-doodlebug) &nbsp;&middot;&nbsp;
+[@N-liraj-khanna](https://github.com/N-liraj-khanna) &nbsp;&middot;&nbsp;
+[@calicartels](https://github.com/calicartels/) &nbsp;&middot;&nbsp;
 
 ## License
 
