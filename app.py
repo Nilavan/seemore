@@ -29,10 +29,8 @@ SCORE_THRESHOLD = 0.2
 NMS_THRESHOLD = 0.4
 CONFIDENCE_THRESHOLD = 0.4
 
-# yolo_path = "/home/liraj/Blind-AI-Backend/yolo_v3"
-yolo_path = "./yolo_v5" # use for localhost
-# path = "/home/liraj/Blind-AI-Backend/"
-path = "./" # use for localhost
+yolo_path = "./yolo_v5"
+path = "./"
 
 client = Client(AccountSID, AuthToken)
 

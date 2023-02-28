@@ -1,8 +1,8 @@
 <h1 align="center">
   <br>
-  <img src="./Frontend/assets/icons/logo_app.png" alt="Blind-ai" width="200">
+  <img src="./Frontend/assets/icons/logo_app.png" alt="seemore" width="200">
   <br>
-  blind.ai
+  seemore
   <br>
 </h1>
 
@@ -78,10 +78,10 @@ From your command line:
 
 ```bash
 # Clone this repository
-$ git clone https://github.com/Nilavan/Blind-AI-Backend/
+$ git clone https://github.com/Nilavan/seemore
 
 # Go into the repository
-$ cd Blind-AI-Backend
+$ cd seemore
 
 # Install dependencies
 $ pip install -r requirements.txt
