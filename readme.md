@@ -2,7 +2,7 @@
   <br>
   <img src="./Frontend/assets/icons/logo_app.png" alt="seemore" width="200">
   <br>
-  seemore
+  <a href="https://nilavan.github.io/projects/1-seemore">seemore</a>
   <br>
 </h1>
 
@@ -20,7 +20,7 @@
 </p>
 
 <p align="center">
-<img width = 100% src="https://user-images.githubusercontent.com/73516876/221947341-e983ae43-0d68-4054-a818-91c483fd2173.png" alt="App">
+<img width = 100% src="https://user-images.githubusercontent.com/73516876/226720191-bf3d3b83-d5f4-41f5-9123-c61412a7ca8b.png" alt="App">
 </p>
 
 ## Introduction
@@ -70,6 +70,8 @@ seemore/
 
 ⭐️ Read text - Reads the text for you.
 
+For more details, visit [here](https://nilavan.github.io/projects/1-seemore)
+
 ## How To Use
 
 To clone and run this application, you'll need [Git](https://git-scm.com) and [Flutter](https://flutter.dev/).
@@ -102,10 +104,18 @@ This software uses the following open source packages:
 
 ## Contributors
 
-[@Nilavan](https://github.com/Nilavan) &nbsp;&middot;&nbsp;
-[@ajith-m-doodlebug](https://github.com/ajith-m-doodlebug) &nbsp;&middot;&nbsp;
-[@N-liraj-khanna](https://github.com/N-liraj-khanna) &nbsp;&middot;&nbsp;
-[@calicartels](https://github.com/calicartels/) &nbsp;&middot;&nbsp;
+> - [A Nilavan](https://github.com/Nilavan)
+>   - Backend development
+>   - Object detection (v1 & v2)
+>   - Currency detection (v2)
+> - [Ajtih Manivannan](https://github.com/ajith-m-doodlebug)
+>   - Frontend development
+> - [N Lirajkhanna](https://github.com/N-liraj-khanna)
+>   - SOS feature
+>   - Currency detection (v1)
+>   - Backend deployment
+> - [TM Vishnu Mukundan](https://github.com/calicartels/)
+>   - Text detection (OCR)
 
 ## License
 
