@@ -70,7 +70,7 @@ seemore/
 
 ⭐️ Object detection - Detects the object in front of you and the distance you are from it.
 
-⭐️ Currency detection - Detects currecny denominations.
+⭐️ Currency detection - Detects currency denominations.
 
 ⭐️ Read text - Reads the text for you.
 
